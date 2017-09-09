@@ -1,0 +1,16 @@
+<h1>Hey yall, i'm the index</h1>
+
+<ul>
+
+  <% @users.each do |user| %>
+    <li><%= user.name %> </li>
+    <ul>
+      <li>
+        <% user.interests.each do |interest| %></li>
+          <%= interest.name %>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+
+</ul>
