@@ -5,8 +5,11 @@
 
 @import "foundation_and_overrides";
 
+
+
 body {
   padding-top: 30px;
+  color: #38CCf0;
 }
 
 section {
@@ -31,12 +34,27 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+h1main {
+  color: #38CCf0;
+  font-size: 3.5em;
+  letter-spacing: -0.5px;
+  margin-bottom: 80px;
+  transform: translateY(70%);
   text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+
 }
+
+//h1 {
+ // font-size: 3em;
+  //letter-spacing: -2px;
+  //margin-bottom: 30px;
+  //transform: translateY(80%);
+  //text-align: center;
+  //font-color: #38CCf0;
+  //font-weight: bold;
+//}
 
 h2 {
   font-size: 1.2em;
@@ -44,7 +62,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #38CCF0;
 }
 
 p {
@@ -58,7 +76,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 4.7em;
-  color: #2E2F30;
+  color: #38CCF0;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -67,11 +85,9 @@ p {
 }
 
 #logo:hover {
-  color: #999999;
+  color: #38CCF0;
   text-decoration: none;
 }
-
-
 
 
 
@@ -92,31 +108,58 @@ form {
     }
 
     .input-group-label {
-      background-color: $primary-color;
-      border-color: $primary-color;
+      background-color: #38CCF0;
+      border-color: #38CCf0;
       max-width: 24%;
       transform: translateX(150%);
+
+
     }
 
     .input-group-field {
-      border-color: $primary-color;
+      border-color: #38CCf0;
       max-width: 25%;
       transform: translateX(150%);
+
+
     }
     .infbutton {
       font-size: 0.5em;
+      text-color: #38CCF0;
     }
 
     .p1 {
-      font-color: $primary-color;
+      font-color: #38CCF0;
     }
 
     .fa {
       color: white;
       width: 1rem; // makes the width of icon labels equal
     }
+
+    .btn {
+      -webkit-border-radius: 60;
+      -moz-border-radius: 60;
+      border-radius: 60px;
+      font-family: Arial;
+      color: #38ccf0;
+      font-size: 21px;
+      padding: 10px 20px 10px 20px;
+      border: solid #38cbf0 4px;
+      text-decoration: none;
+      background: #ffffff;
+    }
+
+    .btn:hover {
+      background: #000000;
+      text-decoration: none;
+    }
+
   }
 }
+
+
+
 
 
 
@@ -125,79 +168,28 @@ form {
 
 // Menu button/blowout
 
+$mobile-app-icon-bar-bg: $white;
+$mobile-app-icon-bar-icon-size: 3.5rem;
 
-$overlay-nav-menu-toggle-size: 4rem;
-$overlay-nav-menu-toggle-color: $black;
-$overlay-nav-menu-link-height: 6.25rem;
-$overlay-nav-menu-link-color: $white;
-$overlay-nav-menu-link-border: 1px solid rgba($overlay-nav-menu-link-color, 0.5);
-$overlay-nav-menu-bg: $primary-color;
-
-.overlay-nav-menu-toggle {
-  position:relative;
-  font-size: $overlay-nav-menu-toggle-size;
-  z-index: 5000;
-  color: $overlay-nav-menu-toggle-color;
-  top: -0.5rem;
-  left: 1.5rem;
-  transition: all 0.4s ease-in-out;
-
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    color: lighten($overlay-nav-menu-toggle-color, 30%);
-  }
-}
-
-.overlay-nav-menu {
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  margin:0;
+.mobile-app-icon-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  list-style: none;
-  background: $overlay-nav-menu-bg;
-  background-size: cover;
-  text-align: center;
-  transform: translateX(-100%) rotateX(40deg);
-  transition: all 400ms cubic-bezier(1.000, -0.400, 0.440, 0.985);
+  align-items: center;
+  justify-content: space-between;
+  background: none;
 
-  li {
-    font-size: 1.5rem;
-  }
+  button {
+    padding: 1.25rem;
+    cursor: pointer;
+    background-color: #38CCf0;
 
-  a {
-    display: block;
-    color: $overlay-nav-menu-link-color;
-    font-weight: bold;
-    height: $overlay-nav-menu-link-height;
-    line-height: $overlay-nav-menu-link-height;
-    border-bottom: $overlay-nav-menu-link-border;
-    text-decoration: none;
-
-    &:hover {
-      background-color: rgba($white, 0.6);
-      color: $black;
+    svg,
+    i,
+    img {
+      font-size: $mobile-app-icon-bar-icon-size;
+      max-height: $mobile-app-icon-bar-icon-size;
+      max-width: $mobile-app-icon-bar-icon-size;
+      background-color: #38CCf0;
     }
-  }
-
-  &.is-open {
-    top: 0;
-    opacity: 1;
-    transform: perspective(200px) translateX(0) rotateX(0);
-  }
-
-  &.is-open ~ .overlay-nav-menu-toggle {
-    display: inline-block;
-    transition: all 0.4s ease-in-out;
-    transform: rotate(135deg);
-    color: lighten($overlay-nav-menu-toggle-color, 100%);
   }
 }
 
