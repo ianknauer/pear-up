@@ -1,6 +1,10 @@
+<%= image_tag @user.avatar.url(:medium) %> <br />
+
+
 <%= @user.name %> <br />
 <%= @user.biography %> <br />
 <%= @user.gender %> <br />
+<%= @user.city %>, <%= @user.country %><br />
 <h1>Interests</h1>
 <ul>
 <% @user.interests.each do |interest| %>
