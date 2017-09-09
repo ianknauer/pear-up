@@ -1,0 +1,204 @@
+// Title CSS and fonts
+
+
+/* universal */
+
+@import "foundation_and_overrides";
+
+body {
+  padding-top: 30px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 90px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 4.7em;
+  color: #2E2F30;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#logo:hover {
+  color: #999999;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+// Form for Username/Psswrd below
+
+
+form {
+  .form-icons {
+    text-align: center;
+
+    h4 {
+      margin-bottom: 1rem;
+
+    }
+
+    .input-group-label {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      max-width: 25%;
+      transform: translateX(150%);
+    }
+
+    .input-group-field {
+      border-color: $primary-color;
+      max-width: 25%;
+      transform: translateX(150%);
+    }
+    .infbutton {
+      font-size: 0.5em;
+    }
+
+    .p1 {
+      font-color: $primary-color;
+    }
+
+    .fa {
+      color: white;
+      width: 1rem; // makes the width of icon labels equal
+    }
+  }
+}
+
+
+
+
+
+
+// Menu button/blowout
+
+
+$overlay-nav-menu-toggle-size: 4rem;
+$overlay-nav-menu-toggle-color: $black;
+$overlay-nav-menu-link-height: 6.25rem;
+$overlay-nav-menu-link-color: $white;
+$overlay-nav-menu-link-border: 1px solid rgba($overlay-nav-menu-link-color, 0.5);
+$overlay-nav-menu-bg: $primary-color;
+
+.overlay-nav-menu-toggle {
+  position:relative;
+  font-size: $overlay-nav-menu-toggle-size;
+  z-index: 5000;
+  color: $overlay-nav-menu-toggle-color;
+  top: -0.5rem;
+  left: 1.5rem;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    transition: all 0.4s ease-in-out;
+    color: lighten($overlay-nav-menu-toggle-color, 30%);
+  }
+}
+
+.overlay-nav-menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  list-style: none;
+  background: $overlay-nav-menu-bg;
+  background-size: cover;
+  text-align: center;
+  transform: translateX(-100%) rotateX(40deg);
+  transition: all 400ms cubic-bezier(1.000, -0.400, 0.440, 0.985);
+
+  li {
+    font-size: 1.5rem;
+  }
+
+  a {
+    display: block;
+    color: $overlay-nav-menu-link-color;
+    font-weight: bold;
+    height: $overlay-nav-menu-link-height;
+    line-height: $overlay-nav-menu-link-height;
+    border-bottom: $overlay-nav-menu-link-border;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgba($white, 0.6);
+      color: $black;
+    }
+  }
+
+  &.is-open {
+    top: 0;
+    opacity: 1;
+    transform: perspective(200px) translateX(0) rotateX(0);
+  }
+
+  &.is-open ~ .overlay-nav-menu-toggle {
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    transform: rotate(135deg);
+    color: lighten($overlay-nav-menu-toggle-color, 100%);
+  }
+}
+
+
