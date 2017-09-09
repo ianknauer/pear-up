@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909172936) do
+ActiveRecord::Schema.define(version: 20170909185353) do
 
   create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "needs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,6 +31,15 @@ ActiveRecord::Schema.define(version: 20170909172936) do
     t.datetime "updated_at", null: false
     t.index ["interest_id"], name: "index_user_interests_on_interest_id"
     t.index ["user_id"], name: "index_user_interests_on_user_id"
+  end
+
+  create_table "user_needs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "need_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["need_id"], name: "index_user_needs_on_need_id"
+    t.index ["user_id"], name: "index_user_needs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

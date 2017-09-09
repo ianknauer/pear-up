@@ -1,0 +1,16 @@
+<%= @user.name %> <br />
+<%= @user.biography %> <br />
+<%= @user.gender %> <br />
+<h1>Interests</h1>
+<ul>
+<% @user.interests.each do |interest| %>
+  <li><%= interest.name %></li>
+<% end %>
+</ul>
+
+<h1>Needs</h1>
+<ul>
+  <% @user.needs.each do |need| %>
+    <li><%= need.name %></li>
+  <% end %>
+</ul>
