@@ -10,8 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery
+//= require jquery.sidr
+//= require bootstrap-sprockets
 
-$(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  $('#simple-menu').sidr({
+    side: 'right',
+    displace: false,
+    speed: 500,
+  });
+
+  $('#close-sidr').click(function(e) {
+    e.preventDefault();
+    $.sidr('close', 'sidr');
+  });
+
+  $('#open-sidr').click(function(e) {
+    e.preventDefault();
+    $.sidr('open', 'sidr');
+  });
+
+});

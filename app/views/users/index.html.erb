@@ -1,16 +1,54 @@
-<h1>Hey yall, i'm the index</h1>
+<style>
+  .navy {
+    height: 368px;
+  }
 
-<ul>
+  body {
+    background-color: #f8f8f8!important;
+  }
 
-  <% @users.each do |user| %>
-    <li><%= user.name %> </li>
-    <ul>
-      <li>
-        <% user.interests.each do |interest| %></li>
-          <%= interest.name %>
-        <% end %>
-      </li>
-    </ul>
-  <% end %>
+</style>
 
-</ul>
+<div class="container">
+  <div class="row profile-list">
+    <div class="col-12 volunteer-list">
+      <%= link_to(root_path) do %>
+      <p class="back-button"><%= image_tag "back.png", class: "back-icon" %> Back</p>
+      <% end %>
+      <div class="white-button">
+        <%= image_tag "hiker_logo.png", class: "hiker-logo" %>
+        <span class="search-button">Hiking</span>
+      </div>
+      <%= image_tag "white-tag.png", class: "add-button" %>
+
+
+      <div class="white-line">
+      </div>
+      <%= image_tag "volun_profile@2x.png", class: "volunteer-profile", id: "open-sidr" %> <br />
+      <%= image_tag "timProfile.png", class: "volunteer-profile" %> <br />
+
+    </div>
+  </div>
+</div>
+
+<div class="Rectangle-4b">
+  <div class="container">
+    <div class="row footer-slider-row">
+      <div class="col-md-4 footer-slider">
+        <font color = #cecece> LOCATION</font> </br> </br>
+        <font color = #282828> Great Northern Way</font> </br>
+        <font color = #4990e2> <a>Change</a></font>
+      </div>
+      <div class="col-md-4 footer-slider">
+        <font color = #cecece> LANGUAGE</font> </br> </br>
+        <font color = #282828> English</font> </br>
+        <font color = #4990e2> <a>Modify</a></font>
+      </div>
+      <div class="col-md-4 footer-slider-last">
+        <font color = #cecece> GENDER</font> </br> </br>
+        <font color = #282828> All</font> </br>
+        <font color = #4990e2> <a>Modify</a></font>
+      </div>
+    </div>
+  </div>
+</div>

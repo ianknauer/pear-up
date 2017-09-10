@@ -1,20 +1,47 @@
-<%= image_tag @user.avatar.url(:medium) %> <br />
+<style>
+ .navy{
+   background-color: #f5f5f5!important;
+   background-image: none;
+ }
+</style>
+<div class="container">
+  <div class="row profile-body">
+  <div class="col-md-4">
+    <%= image_tag @user.avatar.url(:medium), class: "profile-image" %> <br />
+    <p><span><%= image_tag "icon-location.png", class: "location-icon" %></span> Vancouver, Canada</p>
+  </div>
+  <div class="col-md-8">
+    <p class="profile-text">
+      MY PROFILE
+    </p>
+    <h1 class="profile-header"><%= @user.name %></h1>
+    <p class="edit"><a href="#">Edit</a></p>
+    <p class='profile-gender'>
+      <%= @user.gender %> <br />
+    </p>
+    <p class='profile-biography'>
+      <%= @user.biography %> <br />
+    </p>
 
+    <div class="line">
+    </div>
 
-<%= @user.name %> <br />
-<%= @user.biography %> <br />
-<%= @user.gender %> <br />
-<%= @user.city %>, <%= @user.country %><br />
-<h1>Interests</h1>
-<ul>
-<% @user.interests.each do |interest| %>
-  <li><%= interest.name %></li>
-<% end %>
-</ul>
+    <p class="interests-text">INTERESTS</p>
+    <% @user.interests.each do |interest| %>
+      <button type="button" class="btn btn-success"><%= image_tag "hiking.png", class: "hiking-icon" %><%= interest.name %></button>
+    <% end %>
 
-<h1>Needs</h1>
-<ul>
-  <% @user.needs.each do |need| %>
-    <li><%= need.name %></li>
-  <% end %>
-</ul>
+    <%= image_tag "tag-add.png", class: "add-button" %> <br />
+    <div class="line needs-line">
+    </div>
+
+    <p class="needs-text">NEEDS</p>
+    <% @user.needs.each do |need| %>
+      <button type="button" class="btn btn-success btn-needs"><%= image_tag "hiking.png", class: "hiking-icon" %><%= need.name %></button>
+    <% end %>
+
+    <%= image_tag "tag-add.png", class: "add-button" %> <br />
+    <div class="line needs-line">
+
+  </div>
+</div>

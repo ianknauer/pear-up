@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all',
-                             'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-  </script>
-  <![endif]-->
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "PearUP" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="sidr">
+    <!-- Your content -->
+      <div id="sidr-header">
+        <span id="close-sidr" class="glyphicon glyphicon-remove"></span>
+        <p>
+          Messages (2)
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 chat-icons">
+            <%= image_tag "chat-icons.png", :class=> "chat-icons-picture" %>
+          </div>
+          <div class="col-md-10 chat-text">
+            <%= image_tag "chat-body.png", :class=> "chat-text-picture" %>
+            <input class="chatbox">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <%= render 'shared/header' %>
+
+    <%= yield %>
 
 
-
-
-<div class="container">
-  <%= yield %>
-</div>
-</body>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

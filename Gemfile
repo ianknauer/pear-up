@@ -10,11 +10,12 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'foundation-rails'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', "~> 5.0.0"
+gem 'turbolinks', '~> 5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
