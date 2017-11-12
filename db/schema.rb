@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909192224) do
+ActiveRecord::Schema.define(version: 20171003021437) do
 
   create_table "interests", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170909192224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["interest_id"], name: "index_user_interests_on_interest_id"
+    t.index ["user_id", "interest_id"], name: "index_user_interests_on_user_id_and_interest_id", unique: true
     t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170909192224) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "language"
+    t.text "review"
   end
 
 end
