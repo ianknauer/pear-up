@@ -16,12 +16,19 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', "~> 5.0.0"
 gem 'turbolinks', '~> 5'
+gem 'jsonapi-resources'
+gem 'rack-cors'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'faker'
+  gem 'factory-helper'
 end
 
 group :development do
