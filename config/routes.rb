@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      jsonapi_resources :users do
-        jsonapi_resources :interests
-      end
+      devise_for :users, controllers: { sessions: 'sessions' }
+      # jsonapi_resources :users do
+      #   jsonapi_resources :interests
+      # end
     end
   end
 end

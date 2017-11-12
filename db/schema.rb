@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003021437) do
+ActiveRecord::Schema.define(version: 20171112070421) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "interests", force: :cascade do |t|
     t.string "name"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 20171003021437) do
   end
 
   create_table "user_interests", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "interest_id"
+    t.bigint "user_id"
+    t.bigint "interest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["interest_id"], name: "index_user_interests_on_interest_id"
@@ -35,8 +38,8 @@ ActiveRecord::Schema.define(version: 20171003021437) do
   end
 
   create_table "user_needs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "need_id"
+    t.bigint "user_id"
+    t.bigint "need_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["need_id"], name: "index_user_needs_on_need_id"
@@ -58,6 +61,27 @@ ActiveRecord::Schema.define(version: 20171003021437) do
     t.datetime "avatar_updated_at"
     t.string "language"
     t.text "review"
+    t.string "authentication_token"
+    t.string "email"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_interests", "interests"
+  add_foreign_key "user_interests", "users"
+  add_foreign_key "user_needs", "needs"
+  add_foreign_key "user_needs", "users"
 end
