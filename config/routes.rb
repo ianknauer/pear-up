@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
 
-  resources :users
+  use_doorkeeper
 
   namespace :api do
     namespace :v1 do

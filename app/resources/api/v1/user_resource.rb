@@ -1,12 +1,21 @@
 module Api
   module V1
-    class UserResource < JSONAPI::Resource
-      attributes :name, :biography, :gender, :avatar, :language, :city, :country, :review
-      has_many :interests, acts_as_set: true
+    class UserResource < BaseResource
+      attributes :username, :password, :address, :email, :name
 
-      filter :gender
-      filter :language
-      filter :interests
+      class << self
+        def creatable_fields(context)
+          fields = [:username, :password, :address, :email, :name]
+        end
+
+        alias_method :updatable_fields, :creatable_fields
+      end
+
+      def fetchable_fields
+        super - [:password]
+      end
+
+
     end
   end
 end
