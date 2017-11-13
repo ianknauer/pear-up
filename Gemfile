@@ -14,12 +14,13 @@ gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', "~> 5.0.0"
-gem 'turbolinks', '~> 5'
 gem 'jsonapi-resources'
-gem 'rack-cors'
+gem 'bcrypt'
+gem 'pundit'
+gem 'doorkeeper'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
-gem 'devise'
 gem 'pg'
 
 

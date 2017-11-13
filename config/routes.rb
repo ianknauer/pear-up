@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
 
-  resources :users
-  devise_for :users, controllers: { sessions: 'sessions' }
+  use_doorkeeper
 
   namespace :api do
     namespace :v1 do

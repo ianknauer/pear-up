@@ -1,17 +1,37 @@
-class ApplicationController < ActionController::Base
-  before_action :authenticate_user_from_token!
-  before_action :authenticate_user!
+class ApplicationController < JSONAPI::ResourceController
+  include PolicyAuthorization
 
-  private
+  after_action :_skip_session
 
-  def authenticate_user_from_token!
-    authenticate_with_http_token do |token, options|
-      user_email = options[:email].presence
-      user = user_email && User.find_by_email(user_email)
+  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
 
-      if user && Devise.secure_compare(user.authentication_token, token)
-        sign_in user, store: false
-      end
-    end
+
+  before_action :doorkeeper_authorize!
+
+  # Context for the JSONAPI::ResourceController methods
+  def context
+    {
+      controller: self,
+      current_user: current_user
+    }
+  end
+
+  def current_user
+    @current_user ||= _doorkeeper_user
+  end
+
+  def model_class
+    controller_name.classify.constantize
+  end
+
+  def _skip_session
+    request.session_options[:skip] = true
+  end
+
+  def _doorkeeper_user
+    return unless doorkeeper_token
+
+    User.find(doorkeeper_token.resource_owner_id)
   end
 end

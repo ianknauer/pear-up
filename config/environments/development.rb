@@ -46,6 +46,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.serve_static_assets = true
 
   config.action_dispatch.tld_length = 0
 
