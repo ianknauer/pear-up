@@ -18,6 +18,9 @@ web.main:
   log_watch:
     rails: 'log/production.log'
 
+data.db:
+  image: nanobox/postgresql:9.5
+
 # deploy.config:
 #   before_live:
 #     web.main:
