@@ -16,7 +16,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', "~> 5.0.0"
 gem 'jsonapi-resources'
 gem 'bcrypt'
-gem 'pundit'
 gem 'doorkeeper'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'elasticsearch-rails'
