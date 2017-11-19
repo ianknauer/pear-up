@@ -3,6 +3,8 @@ module Api
     class UserResource < BaseResource
       attributes :username, :password, :address, :email, :name, :city, :biography, :specialty, :image
 
+      has_many :events
+
       class << self
         def creatable_fields(context)
           fields = [:username, :password, :address, :email, :name, :biography, :city, :specialty, :image]
