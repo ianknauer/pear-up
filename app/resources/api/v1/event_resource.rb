@@ -11,12 +11,16 @@ module Api
         end
 
         alias_method :updatable_fields, :creatable_fields
+
+        # def records(options = {})
+        #   context = options[:context]
+        #   context[:current_user].events
+        # end
       end
 
       def fetchable_fields
         super
       end
-
     end
   end
 end
