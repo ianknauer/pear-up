@@ -21,7 +21,7 @@ web.main:
 data.db:
   image: nanobox/postgresql:9.5
 
-# deploy.config:
-#   before_live:
-#     web.main:
-#       - rake db:setup_or_migrate
+deploy.config:
+  before_live:
+    web.main:
+      - rake db:setup_or_migrate

@@ -18,6 +18,7 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
+  database: gonano
   host: <%= ENV['DATA_DB_HOST'] %>
   username: <%= ENV['DATA_DB_USER'] %>
   password: <%= ENV['DATA_DB_PASS'] %>
