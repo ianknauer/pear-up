@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114070014) do
+ActiveRecord::Schema.define(version: 20171114204342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20171114070014) do
     t.string "password_digest", null: false
     t.string "username"
     t.string "specialty"
+    t.string "image"
   end
 
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
