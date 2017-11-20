@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119071814) do
+ActiveRecord::Schema.define(version: 20171120023440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20171119071814) do
     t.string "dish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "full_street_address"
   end
 
   create_table "interests", force: :cascade do |t|
@@ -127,6 +130,8 @@ ActiveRecord::Schema.define(version: 20171119071814) do
     t.string "username"
     t.string "specialty"
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"

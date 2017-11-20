@@ -21,6 +21,7 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'pg'
 gem 'carrierwave-base64'
+gem 'geocoder'
 
 
 group :development, :test do
