@@ -28,6 +28,11 @@ module Api
           fields = [:name, :description, :ingredients, :spots, :dish, :users, :address, :full_street_address, :pic, :location]
         end
 
+        def records(options ={})
+          context = options[:context]
+          events = Event.includes(:user_events).references(:user_events).where.not(user_events: {user_id: context[:current_user].id })
+        end
+
         alias_method :updatable_fields, :creatable_fields
 
       end
