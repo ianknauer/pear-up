@@ -5,4 +5,3 @@
 
 Mime::Type.register "image/jpg", :data
 Mime::Type.register "image/jpeg", :data
-Mime::Type.register "image/png", :data
