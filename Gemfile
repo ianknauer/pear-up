@@ -17,11 +17,9 @@ gem 'jsonapi-resources'
 gem 'bcrypt'
 gem 'doorkeeper'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
 gem 'pg'
-gem 'carrierwave-base64'
 gem 'geocoder'
+gem 'figaro'
 
 
 group :development, :test do

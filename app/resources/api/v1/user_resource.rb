@@ -1,13 +1,14 @@
 module Api
   module V1
     class UserResource < BaseResource
-      attributes :username, :password, :address, :email, :name, :city, :biography, :specialty, :image, :latitude, :longitude
-
+      # attributes :username, :password, :address, :email, :name, :city, :biography, :specialty, :latitude, :longitude, :pic
+      attributes :name
       has_many :events
 
       class << self
         def creatable_fields(context)
-          fields = [:username, :password, :address, :email, :name, :biography, :city, :specialty, :image, :latitude, :longitude, :events]
+          # fields = [:username, :password, :address, :email, :name, :city, :biography, :specialty, :latitude, :longitude, :pic]
+          fields = [:name]
         end
 
         alias_method :updatable_fields, :creatable_fields
