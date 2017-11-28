@@ -1,7 +1,7 @@
 module Api
   module V1
     class ParticipateEventResource < JSONAPI::Resource
-      attributes :name, :description, :ingredients, :spots, :dish, :users, :full_street_address, :pic, :location, :instructor
+      attributes :name, :description, :ingredients, :spots, :dish, :users, :full_street_address, :pic, :location, :instructor, :city, :date
       model_name 'Event'
       has_many :users
 
